@@ -1,0 +1,11 @@
+[core]
+	excludesfile = /Users/rahim/.gitignore
+[user]
+	email = i.am@rah.im
+	name = 
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+[credential]
+	helper = osxkeychain
