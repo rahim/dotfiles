@@ -24,6 +24,7 @@ ws_fdt5
 .lesshst
 .mono
 .npm
+.oh-my-zsh
 .passenger
 .pgadmin_histoqueries
 .pgpass
