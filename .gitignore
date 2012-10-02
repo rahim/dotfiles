@@ -32,6 +32,8 @@ ws_fdt5
 .rdebug_hist
 .sqlite_history
 .thumbnails
+.viminfo
+.vim
 .Xcode
 .zsh_history
 .zsh-update
