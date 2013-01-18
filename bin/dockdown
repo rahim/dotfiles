@@ -1,0 +1,4 @@
+#!/bin/sh
+defaults write com.apple.dock autohide -bool no
+defaults write com.apple.dock orientation -string down
+killall -HUP Dock
