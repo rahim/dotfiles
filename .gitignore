@@ -1,5 +1,7 @@
 *
 !.*
+!bin
+!bin/*
 .DS_Store
 .Trash
 .bash_history
