@@ -1,11 +1,29 @@
 [core]
-	excludesfile = /Users/rahim/.gitignore
+	whitespace = trailing-space,space-before-tab
+	excludesfile = ~/.gitignore_global
 [user]
 	email = i.am@rah.im
-	name = 
+	name = Rahim Packir Saibo
 [color]
 	diff = auto
 	status = auto
 	branch = auto
+	ui = auto
 [credential]
 	helper = osxkeychain
+[diff]
+	mnemonicprefix = true
+	renames = copies
+[rerere]
+	enabled = true
+[merge]
+	stat = true
+[branch]
+	autosetupmerge = true
+	autosetuprebase = always
+[push]
+	default = tracking
+[advice]
+	statusHints = false
+[alias]
+  lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --

@@ -12,7 +12,7 @@ export SVN_EDITOR=$EDITOR
 export GIT_EDITOR=$EDITOR
 
 eval "$(rbenv init -)"
-eval "$(hub alias -s)"
+# eval "$(hub alias -s)" # causes zsh git completion issues
 alias sv="python -m SimpleHTTPServer"
 alias ls="ls -G"
 alias homeconfig='git --git-dir=$HOME/.homeconfig.git/ --work-tree=$HOME'

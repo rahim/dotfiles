@@ -17,7 +17,7 @@ ZSH_THEME="rahim"
 # CASE_SENSITIVE="true"
 
 # Comment this out to disable weekly auto-update checks
-# DISABLE_AUTO_UPDATE="true"
+DISABLE_AUTO_UPDATE="true"
 
 # Uncomment following line if you want to disable colors in ls
 # DISABLE_LS_COLORS="true"
@@ -31,6 +31,8 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git brew ruby gem github rake rbenv)
+plugins=(git brew ruby gem rake rbenv cap extract file-info terminalapp)
+# github removed due to hub aliasing completion issues
+# see https://github.com/robbyrussell/oh-my-zsh/issues/766
 
 source $ZSH/oh-my-zsh.sh
