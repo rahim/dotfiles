@@ -1,6 +1,7 @@
 export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
-export PATH=/usr/local/bin:$PATH
+export PATH=/usr/local/bin:$PATH # largely brew binaries
+export PATH=/usr/local/share/python:$PATH # pip binaries
 export PATH=/usr/local/heroku/bin:$PATH
 
 export HAXEPATH=$HOME/lib/haxe-2.08-osx
