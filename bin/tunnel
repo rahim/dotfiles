@@ -1,2 +1,0 @@
-#First is socks proxy for svn, deki, timemanager etc
-ssh -D2000 laptop33 -N -f
