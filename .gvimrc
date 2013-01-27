@@ -1,1 +1,1 @@
-/Users/rahim/.vim/janus/vim/gvimrc
+.vim/janus/vim/gvimrc
