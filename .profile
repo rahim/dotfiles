@@ -19,3 +19,5 @@ alias ls="ls -G"
 alias homeconfig='git --git-dir=$HOME/.homeconfig.git/ --work-tree=$HOME'
 alias sb="subl -n"
 alias sba="subl -a"
+alias map="xargs -n1" # hat tip Vicent Driessen, https://coderwall.com/p/4tkkpq
+
