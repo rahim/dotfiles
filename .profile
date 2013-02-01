@@ -8,7 +8,7 @@ export HAXEPATH=$HOME/lib/haxe-2.08-osx
 export NEKOPATH=$HOME/lib/neko-1.8.2-osx
 export PATH=$HAXEPATH:$NEKOPATH:$PATH
 
-export EDITOR=/usr/local/bin/mvim
+export EDITOR=/usr/bin/vim
 export SVN_EDITOR=$EDITOR
 export GIT_EDITOR=$EDITOR
 
