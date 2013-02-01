@@ -20,4 +20,5 @@ alias homeconfig='git --git-dir=$HOME/.homeconfig.git/ --work-tree=$HOME'
 alias sb="subl -n"
 alias sba="subl -a"
 alias map="xargs -n1" # hat tip Vicent Driessen, https://coderwall.com/p/4tkkpq
+alias wakeerhu="wol 00:1e:c9:37:a5:72"
 
