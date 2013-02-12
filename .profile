@@ -27,8 +27,10 @@ alias sba="subl -a"
 alias map="xargs -n1" # hat tip Vicent Driessen, https://coderwall.com/p/4tkkpq
 
 erhu_mac="00:1e:c9:37:a5:72"
-if [ "{$OS}" = "Darwin" ] ; then
+if [ "$OS" = "Darwin" ]; then
   alias wakeerhu="wol $erhu_mac"
 else
   alias wakeerhu="wakeonlan $erhu_mac"
 fi
+
+alias sleeperhu="ssh erhu sudo halt -p" # technically this isn't sleeping...
