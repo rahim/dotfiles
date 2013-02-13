@@ -1,5 +1,8 @@
 *
 !.*
+!.*/*
+!.*/*/*
+!.*/*/*/*
 !bin
 !bin/*
 .DS_Store
@@ -35,4 +38,7 @@
 .zcompdump
 .wireshark
 .irb_history
+.ssh
+.aptitude
+.irssi/away.log
 
