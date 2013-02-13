@@ -46,3 +46,8 @@ function prompt_hostname() {
     [ -n "$HOST" ] && echo "$HOST:"
   fi
 }
+
+# avoid corrections for sudo
+# (misbehaves in home dir with eg sudo vim and .vim)
+alias sudo="nocorrect sudo"
+

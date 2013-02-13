@@ -1,3 +1,8 @@
+OS=`uname`
+
+# the following isn't always included here on debian
+export PATH=/bin:/usr/bin:/sbin/:/usr/sbin:$PATH # to be sure to be sure...
+
 export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
 export PATH=/usr/local/bin:$PATH # largely brew binaries
@@ -20,5 +25,12 @@ alias homeconfig='git --git-dir=$HOME/.homeconfig.git/ --work-tree=$HOME'
 alias sb="subl -n"
 alias sba="subl -a"
 alias map="xargs -n1" # hat tip Vicent Driessen, https://coderwall.com/p/4tkkpq
-alias wakeerhu="wol 00:1e:c9:37:a5:72"
 
+erhu_mac="00:1e:c9:37:a5:72"
+if [ "$OS" = "Darwin" ]; then
+  alias wakeerhu="wol $erhu_mac"
+else
+  alias wakeerhu="wakeonlan $erhu_mac"
+fi
+
+alias sleeperhu="ssh erhu sudo halt -p" # technically this isn't sleeping...
