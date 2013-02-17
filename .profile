@@ -22,6 +22,7 @@ eval "$(rbenv init -)"
 alias sv="python -m SimpleHTTPServer"
 alias ls="ls -G"
 alias homeconfig='git --git-dir=$HOME/.homeconfig.git/ --work-tree=$HOME'
+alias hc=homeconfig
 alias sb="subl -n"
 alias sba="subl -a"
 alias map="xargs -n1" # hat tip Vicent Driessen, https://coderwall.com/p/4tkkpq
