@@ -25,6 +25,7 @@ alias homeconfig='git --git-dir=$HOME/.homeconfig.git/ --work-tree=$HOME'
 alias sb="subl -n"
 alias sba="subl -a"
 alias map="xargs -n1" # hat tip Vicent Driessen, https://coderwall.com/p/4tkkpq
+alias git lg="nocomplete git lg"
 
 erhu_mac="00:1e:c9:37:a5:72"
 if [ "$OS" = "Darwin" ]; then
