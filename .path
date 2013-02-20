@@ -1,0 +1,14 @@
+# the following isn't always included here on debian
+export PATH=/bin:/usr/bin:/sbin/:/usr/sbin:$PATH # to be sure to be sure...
+
+export PATH="$HOME/.rbenv/bin:$PATH"
+export PATH="$HOME/bin:$PATH"
+export PATH=/usr/local/bin:$PATH # largely brew binaries
+export PATH=/usr/local/share/python:$PATH # pip binaries
+export PATH=/usr/local/heroku/bin:$PATH
+
+export EDITOR=/usr/bin/vim
+export SVN_EDITOR=$EDITOR
+export GIT_EDITOR=$EDITOR
+
+eval "$(rbenv init -)"
