@@ -41,10 +41,11 @@
 .ssh
 .aptitude
 .irssi/away.log
-
 .adobe
 .codeintel
 .wireshark-etc
 .cups
 .node-gyp
 .subversion
+.sendcat
+.pry_history
