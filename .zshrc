@@ -51,3 +51,5 @@ function prompt_hostname() {
 # (misbehaves in home dir with eg sudo vim and .vim)
 alias sudo="nocorrect sudo"
 
+source $HOME/.less_termcap
+
