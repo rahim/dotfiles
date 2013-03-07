@@ -1,4 +1,7 @@
-#!/bin/sh
-defaults write com.apple.dock autohide -bool yes
-defaults write com.apple.dock orientation -string left
-killall -HUP Dock
+#!/usr/bin/osascript
+tell application "System Events"
+  tell dock preferences
+    set properties to {screen edge:left, autohide:true}
+  end tell
+end tell
+
