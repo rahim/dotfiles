@@ -1,7 +1,12 @@
-#!/usr/bin/osascript
+#!/bin/sh
+osascript <<-EOF
 tell application "System Events"
   tell dock preferences
     set properties to {screen edge:left, autohide:true}
   end tell
 end tell
+EOF
+
+defaults write com.apple.dock autohide -bool yes
+defaults write com.apple.dock orientation -string left
 
