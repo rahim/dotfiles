@@ -2184,7 +2184,7 @@
 		<key>Button,1,1,,</key>
 		<dict>
 			<key>Action</key>
-			<string>kPasteFromSelectionPointerAction</string>
+			<string>kPasteFromClipboardPointerAction</string>
 		</dict>
 		<key>Button,2,1,,</key>
 		<dict>
