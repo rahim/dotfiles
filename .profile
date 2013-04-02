@@ -16,6 +16,7 @@ fi
 erhu_mac="00:1e:c9:37:a5:72"
 if [ "$OS" = "Darwin" ]; then
   alias wakeerhu="wol $erhu_mac"
+  alias pg_start="postgres -D /usr/local/var/postgres"
 else
   alias wakeerhu="wakeonlan $erhu_mac"
 fi
