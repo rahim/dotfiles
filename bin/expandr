@@ -1,0 +1,15 @@
+#!/bin/sh
+#
+# Iteratively replaces tabs in rubyish files with 2 spaces.
+#
+
+if [[ -n "$1" ]]; then
+  find $1 -name \*.rb -o -name \*.erb -o -name \*.scss -o -name \*.js -o -name \*.coffee -o -name \*.yml -o -name \*.md -o -name "Gemfile" -o -name "config.ru" | while read line
+  do
+    expand -t 2 $line > $line.new
+    mv $line.new $line
+  done
+else
+  echo "Path required"
+  exit 1
+fi
