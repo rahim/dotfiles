@@ -1,1 +1,4 @@
 source '/Users/rahim/.path'
+
+export POW_TIMEOUT=5000
+
