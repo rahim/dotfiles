@@ -11,6 +11,7 @@ alias map="xargs -n1" # hat tip Vicent Driessen, https://coderwall.com/p/4tkkpq
 
 if type "nocorrect" > /dev/null;  then
   alias git="nocorrect git"
+  alias bower="nocorrect bower"
 fi
 
 erhu_mac="00:1e:c9:37:a5:72"
