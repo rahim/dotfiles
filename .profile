@@ -8,6 +8,7 @@ alias hc=homeconfig
 alias sb="subl -n"
 alias sba="subl -a"
 alias map="xargs -n1" # hat tip Vicent Driessen, https://coderwall.com/p/4tkkpq
+alias ip="curl -s curlmyip.com"
 
 if type "nocorrect" > /dev/null;  then
   alias git="nocorrect git"
