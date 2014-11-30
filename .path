@@ -1,5 +1,5 @@
 # the following isn't always included here on debian
-export PATH=/bin:/usr/bin:/sbin/:/usr/sbin:$PATH # to be sure to be sure...
+export PATH=/bin:/usr/bin:/sbin:/usr/sbin:$PATH # to be sure to be sure...
 
 export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
