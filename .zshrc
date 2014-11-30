@@ -38,9 +38,9 @@ plugins=(git brew ruby gem rake rbenv cap extract file-info terminalapp pip)
 
 source $ZSH/oh-my-zsh.sh
 
-# override our theme's prompt if cello
+# override our theme's prompt if koto
 function prompt_hostname() {
-  if [[ $HOST = *cello* ]]; then
+  if [[ $HOST = *koto* ]]; then
     #do nothing
   else
     [ -n "$HOST" ] && echo "$HOST:"
