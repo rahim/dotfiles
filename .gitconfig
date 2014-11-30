@@ -28,3 +28,7 @@
 [alias]
   lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
   wdiff = diff --color-words
+[filter "media"]
+	clean = git media clean %f
+	smudge = git media smudge %f
+	required = true
