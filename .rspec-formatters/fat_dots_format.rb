@@ -6,6 +6,10 @@ class FatDotsFormat < RSpec::Core::Formatters::ProgressFormatter
   end
 
   def example_pending(_notification)
-    output.print pending_color("○")
+    output.print pending_color("▲")
+  end
+
+  def example_failed(_notification)
+    output.print failure_color("◼")
   end
 end
