@@ -24,7 +24,7 @@ else
   alias wakeerhu="wakeonlan $erhu_mac"
 fi
 
-alias sleeperhu="ssh erhu sudo halt -p" # technically this isn't sleeping...
+alias sleeperhu="ssh erhu.local sudo halt -p" # technically this isn't sleeping...
 
 source $HOME/.path
 
