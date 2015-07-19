@@ -15,3 +15,6 @@ if [ "$OS" = "Darwin" ]; then
 fi
 
 eval "$(rbenv init -)"
+
+export PATH=./bin:$PATH # add rails style bin folder binaries top priority
+
