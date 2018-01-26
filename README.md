@@ -16,7 +16,23 @@ alias homeconfig='git --git-dir=$HOME/.homeconfig.git/ --work-tree=$HOME'
 * Home directory is not a git repo
 * All the power of git with a simple alias
 
-## Setup
+## Updates
+
+It's just git:
+
+    $ homeconfig pull
+
+## Additions
+
+It's still just git:
+
+    $ homeconfig add .nyanconfig
+    $ homeconfig commit -m "Added nyan config"
+    $ homeconfig push
+    
+---
+
+## Personal Environment Setup Notes
 
 Prerequisites:
 * zsh
@@ -55,17 +71,3 @@ Further steps for a personal ruby/vim environment:
 * install [janus](https://github.com/carlhuda/janus)
 
     ```$ curl -Lo- https://bit.ly/janus-bootstrap | bash```
-
-## Updates
-
-It's just git:
-
-    $ homeconfig pull
-
-## Additions
-
-It's still just git:
-
-    $ homeconfig add .nyanconfig
-    $ homeconfig commit -m "Added nyan config"
-    $ homeconfig push
