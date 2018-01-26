@@ -4,7 +4,11 @@ Selected dotfiles, managed by git without symlinks or a home dir that's a git re
 
 For background and information on how to set this up for your own dotfiles see [Sursolid's "Managing home dotfiles with git and github"](http://sursolid.com/managing-home-dotfiles-with-git-and-github) where this approach was shamelessly cribbed from.
 
-In summary: homeconfig is aliased to git, but with the respository data in `~/.homeconfig.git` rather than `~/.git`
+In summary: homeconfig is aliased to git, but with the respository data in `~/.homeconfig.git` rather than `~/.git` using a [git worktree](https://git-scm.com/docs/git-worktree)
+
+```
+alias homeconfig='git --git-dir=$HOME/.homeconfig.git/ --work-tree=$HOME'
+```
 
 ## Features
 
