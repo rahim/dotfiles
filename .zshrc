@@ -54,3 +54,5 @@ alias sudo="nocorrect sudo"
 
 source $HOME/.less_termcap
 
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
