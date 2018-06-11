@@ -5,8 +5,6 @@ alias sv="python -m SimpleHTTPServer"
 alias ls="ls -G"
 alias homeconfig='git --git-dir=$HOME/.homeconfig.git/ --work-tree=$HOME'
 alias hc=homeconfig
-alias sb="subl -n"
-alias sba="subl -a"
 alias map="xargs -n1" # hat tip Vicent Driessen, https://coderwall.com/p/4tkkpq
 alias ip="curl -s ifconfig.co"
 alias cwdiff="git diff --no-index --color-words --minimal --ignore-all-space"
@@ -27,5 +25,20 @@ fi
 
 alias sleeperhu="ssh erhu.local sudo halt -p" # technically this isn't sleeping...
 
+alias sb="subl -n"
+alias sba="subl -a"
+
+# Give this a commit set,
+# eg `sbchanged HEAD..master`
+# -> open any files that have changes on the current branch
+function sbchanged() {
+  sba $(git show --name-only --format= $1)
+}
+# Give this a single commit,
+# eg `sbdiffed master`
+# -> open any files which differ from master
+function sbdiffed() {
+  sba $(git diff --name-only --format= $1)
+}
 source $HOME/.path
 
