@@ -1,0 +1,5 @@
+for k in $(git branch | sed /\*/d); do
+  if [ -z "$(git log -1 --since='3 months ago' -s $k)" ]; then
+    echo $k
+  fi
+done
