@@ -9,6 +9,11 @@ alias map="xargs -n1" # hat tip Vicent Driessen, https://coderwall.com/p/4tkkpq
 alias ip="curl -s ifconfig.co"
 alias cwdiff="git diff --no-index --color-words --minimal --ignore-all-space"
 alias be="bundle exec"
+alias tfl='tail -f log/development.log | grep -vE "(^$|asset|^DEPRE)"'
+alias rg="rg --no-heading -g '!*.min.js' --max-columns 200"
+# This really wants to be a script that detects grip, the readme name and type
+# and does something smart re: browser fallback
+alias readme="grip README.md --quiet --export - | browser"
 
 if type "nocorrect" > /dev/null;  then
   alias git="nocorrect git"
@@ -40,5 +45,5 @@ function sbchanged() {
 function sbdiffed() {
   sba $(git diff --name-only --format= $1)
 }
-source $HOME/.path
 
+source $HOME/.path
