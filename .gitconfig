@@ -1,44 +1,80 @@
 [core]
-	whitespace = trailing-space,space-before-tab
-	excludesfile = ~/.gitignore_global
+  whitespace = trailing-space,space-before-tab
+  excludesfile = ~/.gitignore_global
+	autocrlf = input
 [user]
 	email = i.am@rah.im
 	name = Rahim Packir Saibo
 [color]
-	diff = auto
-	status = auto
-	branch = auto
-	ui = auto
+  diff = auto # always breaks oh-my-zsh branch status indicator
+  status = auto
+  branch = auto
+  ui = auto
 [credential]
-	helper = osxkeychain
+  helper = osxkeychain
 [diff]
-	mnemonicprefix = true
-	renames = copies
+  mnemonicprefix = true
+  renames = true
+  algorithm = minimal
+  compactionHeuristic = true
+  tool = icdiff
+[difftool]
+  prompt = false
+[difftool "icdiff"]
+  cmd = /usr/local/bin/icdiff --line-numbers $LOCAL $REMOTE
 [rerere]
-	enabled = true
+  enabled = true
 [merge]
-	stat = true
+  stat = true
 [branch]
-	autosetupmerge = true
-	autosetuprebase = always
+  autosetupmerge = true
+  autosetuprebase = always
 [push]
-	default = tracking
+	default = current
+[rebase]
+  autosquash = true
+	autoStash = true
 [advice]
-	statusHints = false
+  statusHints = false
 [alias]
   lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
   wdiff = diff --color-words
+  set-upstream = !git branch --set-upstream-to=origin/`git symbolic-ref --short HEAD`
 [filter "media"]
-	required = true
-	clean = git media clean %f
-	smudge = git media smudge %f
+  required = true
+  clean = git media clean %f
+  smudge = git media smudge %f
 [filter "hawser"]
-	clean = git hawser clean %f
-	smudge = git hawser smudge %f
-	required = true
-[url "https://github.com"]
-	insteadOf = git://github.com
+  clean = git hawser clean %f
+  smudge = git hawser smudge %f
+  required = true
+#[url "https://github.com"]
+# insteadOf = git://github.com
 [filter "lfs"]
-	clean = git lfs clean %f
-	smudge = git lfs smudge %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
 	required = true
+	clean = git-lfs clean -- %f
+[pager]
+  log = diff-highlight | less
+  show = diff-highlight | less
+  diff = diff-highlight | less
+[interactive]
+  diffFilter = diff-highlight
+# Stolen from https://gist.github.com/strax/c0dcbfa2f9bb54f95787
+[merge "railsschema"]
+  name = newer Rails schema version
+  driver = "ruby -e '\n\
+    system %(git), %(merge-file), %(--marker-size=%L), %(%A), %(%O), %(%B)\n\
+    b = File.read(%(%A))\n\
+    b.sub!(/^<+ .*\\nActiveRecord::Schema\\.define.version: (\\d+). do\\n=+\\nActiveRecord::Schema\\.define.version: (\\d+). do\\n>+ .*/) do\n\
+      %(ActiveRecord::Schema.define(version: #{[$1, $2].max}) do)\n\
+    end\n\
+    File.open(%(%A), %(w)) {|f| f.write(b)}\n\
+    exit 1 if b.include?(%(<)*%L)'"
+[pull]
+	rebase = true
+[github]
+	user = rahim
+[submodule]
+	recurse = true
