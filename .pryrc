@@ -1,5 +1,5 @@
 begin
-  require 'awesome_print' 
+  require 'awesome_print'
   Pry.config.print = proc { |output, value| Pry::Helpers::BaseHelpers.stagger_output("=> #{value.ai}", output) }
 rescue LoadError => err
 
@@ -20,9 +20,6 @@ if defined? Hirb
   end
 end
 
-# Prompt with ruby version
-Pry.prompt = [proc { |obj, nest_level| "#{RUBY_VERSION} (#{obj}):#{nest_level} > " }, proc { |obj, nest_level| "#{RUBY_VERSION} (#{obj}):#{nest_level} * " }]
-
 # Launch Pry with access to the entire Rails stack.
 # See https://github.com/pry/pry/wiki/Setting-up-Rails-or-Heroku-to-use-Pry#wiki-pry_rails
 # If you have Pry in your Gemfile, you can pass: ./script/console --irb=pry instead.
@@ -31,14 +28,41 @@ rails = File.join Dir.getwd, 'config', 'environment.rb'
 
 if File.exist?(rails) && ENV['SKIP_RAILS'].nil?
   require rails
-  
+
   if defined?(Rails) && Rails.version[0..0] == "2"
     require 'console_app'
     require 'console_with_helpers'
-  elsif defined?(Rails) && [3,4].include?(Rails.version[0..0].to_i)
+  elsif defined?(Rails) && [3,4,5,6].include?(Rails.version[0..0].to_i)
     require 'rails/console/app'
     require 'rails/console/helpers'
+
+    if Rails.env
+      extend Rails::ConsoleMethods
+    end
   else
     warn "[WARN] cannot load Rails console commands (Not on Rails2 or Rails3?)"
   end
+end
+
+# Prompt with ruby version
+
+if defined?(Rails)
+  Pry.config.prompt = [
+    proc {
+      current_app = Rails.application.class.parent_name.underscore.gsub("_", "-")
+      rails_env = Rails.env.downcase
+
+      # shorten some common long environment names
+      rails_env = "dev" if rails_env == "development"
+      rails_env = "prod" if rails_env == "production"
+
+      "#{current_app} [#{rails_env}] ᐅ "
+    },
+    proc { "> "}
+  ]
+else
+  Pry.prompt = [
+    proc { |obj, nest_level| "#{RUBY_VERSION} (#{obj}):#{nest_level} > " },
+    proc { |obj, nest_level| "#{RUBY_VERSION} (#{obj}):#{nest_level} * " }
+  ]
 end
