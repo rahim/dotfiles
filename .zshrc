@@ -31,7 +31,7 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git brew ruby gem rake cap extract file-info terminalapp pip)
+plugins=(git brew ruby gem rake extract file-info pip nvm)
 
 # github removed due to hub aliasing completion issues
 # see https://github.com/robbyrussell/oh-my-zsh/issues/766
@@ -41,7 +41,7 @@ source $ZSH/oh-my-zsh.sh
 
 # override our theme's prompt if koto
 function prompt_hostname() {
-  if [[ $HOST = *koto* ]]; then
+  if [[ $HOST = *kora* ]] || [[ $HOST = *fiddle* ]]; then
     #do nothing
   else
     [ -n "$HOST" ] && echo "$HOST:"
