@@ -33,6 +33,15 @@ alias sleeperhu="ssh erhu.local sudo halt -p" # technically this isn't sleeping.
 alias sb="subl -n"
 alias sba="subl -a"
 
+# very litmus, or at least rails, flavoured...
+alias freshen="git checkout master && git pull --recurse-submodules && bundle && rake db:migrate --trace && git checkout db/schema.rb && git checkout - && touch tmp/restart.txt"
+
+alias showdesktop="defaults write com.apple.finder CreateDesktop true; killall Finder"
+alias hidedesktop="defaults write com.apple.finder CreateDesktop false; killall Finder"
+
+# from building git
+alias inflate='ruby -r zlib -e "STDOUT.write Zlib::Inflate.inflate(STDIN.read)"'
+
 # Give this a commit set,
 # eg `sbchanged HEAD..master`
 # -> open any files that have changes on the current branch
@@ -45,5 +54,7 @@ function sbchanged() {
 function sbdiffed() {
   sba $(git diff --name-only --format= $1)
 }
+
+function rawk() { ruby -n -e "puts \$_$1" }
 
 source $HOME/.path
