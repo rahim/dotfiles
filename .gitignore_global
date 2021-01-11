@@ -38,3 +38,7 @@
 Icon?
 ehthumbs.db
 Thumbs.db
+
+# typically ripgrep ignore config
+.ignore
+
