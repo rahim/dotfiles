@@ -1,2 +1,2 @@
---color --require=~/.rspec-formatters/fat_dots_format.rb --format=FatDotsFormat
+--color
 
