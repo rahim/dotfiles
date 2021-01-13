@@ -14,6 +14,7 @@ alias rg="rg --no-heading -g '!*.min.js' --max-columns 200"
 # This really wants to be a script that detects grip, the readme name and type
 # and does something smart re: browser fallback
 alias readme="grip README.md --quiet --export - | browser"
+alias filecounts="du -a | cut -d/ -f2 | sort | uniq -c | sort -nr"
 
 if type "nocorrect" > /dev/null;  then
   alias git="nocorrect git"
