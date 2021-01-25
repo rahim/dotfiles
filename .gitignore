@@ -50,4 +50,7 @@
 .aws
 .electrum
 .zsh_sessions
-
+.yarnrc
+.zcompdump-*
+.nvm
+.bundle
