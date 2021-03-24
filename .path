@@ -19,7 +19,9 @@ export PATH="$HOME/.cargo/bin:$PATH"
 
 export NVM_LAZY_LOAD=true
 
-which brew >/dev/null || (test -d /home/linuxbrew/.linuxbrew && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv))
+if ! which brew >/dev/null; then
+  test -d /home/linuxbrew/.linuxbrew && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+fi
 which brew >/dev/null && brew_prefix="$(brew --prefix)" && brew_exports="$($brew_prefix/bin/brew shellenv)" && eval $brew_exports
 which rbenv >/dev/null && eval "$(rbenv init -)"
 which nodenv >/dev/null && eval "$(nodenv init -)"
