@@ -17,11 +17,15 @@ fi
 
 export PATH="$HOME/.cargo/bin:$PATH"
 
-export RBENV_ROOT=/usr/local/opt/rbenv # consider moving and simplifying to ~/.rbenv
-
 export NVM_LAZY_LOAD=true
 
+brew_prefix="$(brew --prefix)"
+brew_exports="$($brew_prefix/bin/brew shellenv)"
+which brew >/dev/null && eval $brew_exports
 which rbenv >/dev/null && eval "$(rbenv init -)"
-export PATH=/usr/local/opt/rbenv/shims:/usr/local/opt/rbenv/bin:$PATH # imitate oh-my-zsh rbenv plugin
+which nodenv >/dev/null && eval "$(nodenv init -)"
 
 export PATH=./bin:$PATH # add rails style bin folder binaries top priority
+
+# Cleanup PATH - remove duplicate entries
+which zsh >/dev/null && PATH=$(zsh -fc "typeset -TU P=$PATH p; echo \$P")
