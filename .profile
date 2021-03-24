@@ -55,7 +55,13 @@ function sbchanged() {
 function sbdiffed() {
   sba $(git diff --name-only --format= $1)
 }
-
-function rawk() { ruby -n -e "puts \$_$1" }
+# Pipe lines, map to anything we can call on a ruby string
+# eg
+# ᐅ ls -al | rawk '.split[2]' | sort | uniq      # unique owners in pwd
+# rahim
+# root
+function rawk() {
+  ruby -n -e "puts \$_$1"
+}
 
 source $HOME/.path
