@@ -54,3 +54,8 @@
 .zcompdump-*
 .nvm
 .bundle
+.ansible
+.bash_logout
+.nodenv
+.sudo_as_admin_successful
+.vbox_version
