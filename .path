@@ -27,4 +27,4 @@ which nodenv >/dev/null && eval "$(nodenv init -)"
 export PATH=./bin:$PATH # add rails style bin folder binaries top priority
 
 # Cleanup PATH - remove duplicate entries
-which zsh >/dev/null && PATH=$(zsh -fc "typeset -TU P=$PATH p; echo \$P")
+which zsh >/dev/null && export PATH=$(zsh -fc "typeset -TU P=$PATH p; echo \$P")
