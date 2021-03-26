@@ -54,3 +54,8 @@ source $HOME/.less_termcap
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+if [[ $HOST =~ ^litmus-dev ]] && [ -d ~/litmus ]; then
+  cd litmus
+fi
+
