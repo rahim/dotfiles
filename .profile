@@ -64,4 +64,6 @@ function rawk() {
   ruby -n -e "puts \$_$1"
 }
 
+export HOMEBREW_NO_AUTO_UPDATE=1
+
 source $HOME/.path
