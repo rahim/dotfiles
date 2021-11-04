@@ -7,7 +7,7 @@ For background and information on how to set this up for your own dotfiles see [
 In summary: homeconfig is aliased to git, but with the respository data in `~/.homeconfig.git` rather than `~/.git` using a [git worktree](https://git-scm.com/docs/git-worktree)
 
 ```
-alias homeconfig='git --git-dir=$HOME/.homeconfig.git/ --work-tree=$HOME'
+alias homeconfig='git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME'
 ```
 
 ## Features
@@ -46,11 +46,17 @@ My setup depends on a fork of [Robby Russell's oh-my-zsh](https://github.com/rob
 To setup homeconfig itself to manage dotfiles:
 
     $ cd ~
-    $ git clone git@github.com:rahim/homeconfig.git
-    $ mv homeconfig/.git .homeconfig.git
+    $ git clone git@github.com:rahim/dotfiles.git
+    $ mv dotfiles/.git .dotfiles.git
+    
+    # bash
     $ shopt -s dotglob
-    $ mv -i homeconfig/* .
-    $ rmdir homeconfig
+    $ mv -i dotfiles/* .
+
+    # zsh
+    $ mv -i dotfiles/*(D) . 
+
+    $ rmdir dotfiles
 
 Further steps for a personal ruby/vim environment:
 

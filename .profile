@@ -3,7 +3,7 @@ OS=`uname`
 # eval "$(hub alias -s)" # causes zsh git completion issues
 alias sv="python -m SimpleHTTPServer"
 alias ls="ls -G"
-alias homeconfig='git --git-dir=$HOME/.homeconfig.git/ --work-tree=$HOME'
+alias homeconfig='git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME'
 alias hc=homeconfig
 alias map="xargs -n1" # hat tip Vicent Driessen, https://coderwall.com/p/4tkkpq
 alias ip="curl -s ifconfig.co"

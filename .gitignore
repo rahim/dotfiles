@@ -15,6 +15,7 @@
 .gem
 .heroku
 .homeconfig.git
+.dotfiles.git
 .lesshst
 .mono
 .netrc
