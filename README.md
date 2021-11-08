@@ -40,7 +40,7 @@ Prerequisites:
 
 My setup depends on a fork of [Robby Russell's oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh) for access to my zsh theme:
 
-    $ git clone https://github.com/rahim/oh-my-zsh ~/.oh-my-zsh
+    $ git clone git@github.com:rahim/oh-my-zsh.git ~/.oh-my-zsh
     $ chsh -s /bin/zsh
 
 To setup homeconfig itself to manage dotfiles:
@@ -57,22 +57,6 @@ To setup homeconfig itself to manage dotfiles:
     $ mv -i dotfiles/*(D) . 
 
     $ rmdir dotfiles
-
-Further steps for a personal ruby/vim environment:
-
-* install [rbenv](https://github.com/sstephenson/rbenv/) (ruby/rake is required by janus)
-
-    ```$ git clone git://github.com/sstephenson/rbenv.git ~/.rbenv```
-
-* install [ruby-build](https://github.com/sstephenson/ruby-build)
-
-    ```$ git clone git://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build```
-
-* install a preferred ruby, set it global
-
-
-    ```$ rbenv install 2.0.0```
-    ```$ rbenv global 2.0.0```
 
 * install [janus](https://github.com/carlhuda/janus)
 
