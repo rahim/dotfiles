@@ -46,23 +46,32 @@ end
 
 # Prompt with ruby version
 
-if defined?(Rails)
-  Pry.config.prompt = [
-    proc {
-      current_app = Rails.application.class.parent_name.underscore.gsub("_", "-")
-      rails_env = Rails.env.downcase
+prompt_procs =
+  if defined?(Rails)
+    [
+      proc {
+        current_app = Rails.application.class.parent_name.underscore.gsub("_", "-")
+        rails_env = Rails.env.downcase
 
-      # shorten some common long environment names
-      rails_env = "dev" if rails_env == "development"
-      rails_env = "prod" if rails_env == "production"
+        # shorten some common long environment names
+        rails_env = "dev" if rails_env == "development"
+        rails_env = "prod" if rails_env == "production"
 
-      "#{current_app} [#{rails_env}] ᐅ "
-    },
-    proc { "> "}
-  ]
-else
-  Pry.prompt = [
-    proc { |obj, nest_level| "#{RUBY_VERSION} (#{obj}):#{nest_level} > " },
-    proc { |obj, nest_level| "#{RUBY_VERSION} (#{obj}):#{nest_level} * " }
-  ]
+        "#{current_app} [#{rails_env}] ᐅ "
+      },
+      proc { "> "}
+    ]
+  else
+    [
+      proc { |obj, nest_level| "#{RUBY_VERSION} (#{obj}):#{nest_level} > " },
+      proc { |obj, nest_level| "#{RUBY_VERSION} (#{obj}):#{nest_level} * " }
+    ]
+  end
+
+begin # pry >= 0.13
+  Pry.config.prompt = Pry::Prompt.new(
+    'rahim', 'rahim rails prompt', prompt_procs
+  )
+rescue ArgumentError # pry < 0.13
+  Pry.config.prompt = prompt_procs
 end
