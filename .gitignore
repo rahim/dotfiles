@@ -26,6 +26,7 @@
 .pgpass
 .pow
 .rbenv
+.rbenv-arm
 .rdebug_hist
 .thumbnails
 .viminfo
@@ -58,5 +59,6 @@
 .ansible
 .bash_logout
 .nodenv
+.nodenv-arm
 .sudo_as_admin_successful
 .vbox_version
