@@ -46,18 +46,25 @@ end
 
 # Prompt with ruby version
 
+def current_app_name
+  if Rails.version[0..0].to_i >= 6
+    Rails.application.class.module_parent_name
+  else
+    Rails.application.class.parent_name
+  end.underscore.gsub("_", "-")
+end
+
 prompt_procs =
   if defined?(Rails)
     [
       proc {
-        current_app = Rails.application.class.parent_name.underscore.gsub("_", "-")
         rails_env = Rails.env.downcase
 
         # shorten some common long environment names
         rails_env = "dev" if rails_env == "development"
         rails_env = "prod" if rails_env == "production"
 
-        "#{current_app} [#{rails_env}] ᐅ "
+        "#{current_app_name} [#{rails_env}] ᐅ "
       },
       proc { "> "}
     ]
