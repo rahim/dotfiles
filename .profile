@@ -18,18 +18,7 @@ alias filecounts="du -a | cut -d/ -f2 | sort | uniq -c | sort -nr"
 
 if type "nocorrect" > /dev/null;  then
   alias git="nocorrect git"
-  alias bower="nocorrect bower"
 fi
-
-erhu_mac="00:1e:c9:37:a5:72"
-if [ "$OS" = "Darwin" ]; then
-  alias wakeerhu="wol $erhu_mac"
-  alias pg_start="postgres -D /usr/local/var/postgres"
-else
-  alias wakeerhu="wakeonlan $erhu_mac"
-fi
-
-alias sleeperhu="ssh erhu.local sudo halt -p" # technically this isn't sleeping...
 
 alias sb="subl -n"
 alias sba="subl -a"
