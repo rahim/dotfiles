@@ -1,7 +1,7 @@
 OS=`uname`
 
 # eval "$(hub alias -s)" # causes zsh git completion issues
-alias sv="python -m SimpleHTTPServer"
+alias sv="ruby -run -ehttpd . -p8000"
 alias ls="ls -G"
 alias homeconfig='git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME'
 alias hc=homeconfig
