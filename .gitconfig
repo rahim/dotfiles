@@ -42,7 +42,7 @@
   lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
   wdiff = diff --color-words
   set-upstream = !git branch --set-upstream-to=origin/`git symbolic-ref --short HEAD`
-  recent-branches = branch --sort=-committerdate
+  recent-branches = "!f() { git branch --sort=-committerdate | head; }; f"
 [filter "media"]
   required = true
   clean = git media clean %f
