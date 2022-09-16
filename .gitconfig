@@ -5,6 +5,7 @@
 [user]
 	email = i.am@rah.im
 	name = Rahim Packir Saibo
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINweZIvsnPd5fgHJpDEf90C5Me3CPhc2LvPTpgnhW008 i.am@rah.im
 [color]
   diff = auto # always breaks oh-my-zsh branch status indicator
   status = auto
@@ -82,3 +83,7 @@
 	recurse = true
 [init]
 	defaultBranch = main
+[commit]
+	gpgsign = true
+[gpg]
+	format = ssh
