@@ -43,6 +43,7 @@
   wdiff = diff --color-words
   set-upstream = !git branch --set-upstream-to=origin/`git symbolic-ref --short HEAD`
   recent-branches = "!f() { git branch --sort=-committerdate | head; }; f"
+  changed-on-branch = show --name-only --format= master..HEAD
 [filter "media"]
   required = true
   clean = git media clean %f
