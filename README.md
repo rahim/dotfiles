@@ -58,6 +58,3 @@ To setup homeconfig itself to manage dotfiles:
 
     $ rmdir dotfiles
 
-* install [janus](https://github.com/carlhuda/janus)
-
-    ```$ curl -Lo- https://bit.ly/janus-bootstrap | bash```
