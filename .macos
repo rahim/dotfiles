@@ -39,6 +39,17 @@ else
 fi
 
 ###############################################################################
+# Computer name
+###############################################################################
+
+if [[ "$RUN_AS_ROOT" = true ]] && [[ -n "$HOSTNAME" ]]; then
+  sudo scutil --set ComputerName $HOSTNAME
+  sudo scutil --set HostName $HOSTNAME
+  sudo scutil --set LocalHostName $HOSTNAME
+  sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string $HOSTNAME
+fi
+
+###############################################################################
 # General UI/UX                                                               #
 ###############################################################################
 
@@ -53,11 +64,6 @@ defaults write -g NSDocumentSaveNewDocumentsToCloud -bool false
 
 # Automatically quit printer app once the print jobs complete
 defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
-
-# Restart automatically if the computer freezes
-if [[ "$RUN_AS_ROOT" = true ]]; then
-  systemsetup -setrestartfreeze on
-fi
 
 # Disable smart quotes as they’re annoying when typing code
 # defaults write -g NSAutomaticQuoteSubstitutionEnabled -bool false
@@ -259,20 +265,6 @@ defaults write -g WebKitDeveloperExtras -bool true
 
 # Copy email addresses as `foo@example.com` instead of `Foo Bar <foo@example.com>` in Mail.app
 # defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false
-
-###############################################################################
-# Spotlight                                                                   #
-###############################################################################
-
-if [[ "$RUN_AS_ROOT" = true ]]; then
-  # Disable Spotlight indexing for any volume that gets mounted and has not yet
-  # been indexed before.
-  # Use `sudo mdutil -i off "/Volumes/foo"` to stop indexing any volume.
-  sudo defaults write /.Spotlight-V100/VolumeConfiguration Exclusions -array "/Volumes"
-
-  # Restart spotlight
-  killall mds > /dev/null 2>&1
-fi
 
 ###############################################################################
 # Activity Monitor                                                            #
