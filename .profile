@@ -11,6 +11,7 @@ alias cwdiff="git diff --no-index --color-words --minimal --ignore-all-space"
 alias be="bundle exec"
 alias tfl='tail -f log/development.log | grep -vE "(^$|asset|^DEPRE)"'
 alias rg="rg --no-heading -g '!*.min.js' --max-columns 200"
+alias rga="rg --no-heading -g '!*.min.js' --max-columns 200 -g '!**/spec/**' -g '!*_spec.rb'"
 # This really wants to be a script that detects grip, the readme name and type
 # and does something smart re: browser fallback
 alias readme="grip README.md --quiet --export - | browser"
