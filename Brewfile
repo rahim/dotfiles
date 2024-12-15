@@ -7,6 +7,7 @@ brew "awscli"
 brew "fd"
 # brew "ffmpeg"
 brew "fzf"
+brew "gh"
 brew "git"
 brew "heroku"
 brew "htop"
@@ -28,9 +29,11 @@ brew "tree"
 cask "android-studio"
 cask "camo-studio"
 # cask "charles"
+cask "cloudflare-warp"
 cask "datagrip"
 cask "docker"
-# cask "firefox"
+cask "electrum"
+cask "firefox"
 # cask "github"
 # cask "google-chrome"
 # cask "google-chrome-canary"
@@ -43,8 +46,9 @@ cask "keycastr"
 cask "maestral"
 # cask "muzzle"
 # cask "ngrok"
-# cask "rapidapi" # née "paw"
+cask "rapidapi" # née "paw"
 # cask "slack"
+cask "sdm"
 cask "spotify"
 # cask "steam"
 # cask "sublime-text"
@@ -57,11 +61,16 @@ cask "vyprvpn"
 cask "whatsapp"
 # cask "zoom"
 
+mas "Bitwarden", id: 1352778147
 mas "DaisyDisk", id: 411643860
+mas "ChatGPT", id: 6448311069
 mas "GarageBand", id: 682658836
+mas "Ghostery Privacy Ad Blocker", id: 6504861501
+mas "iA Writer", id: 775737590
 mas "Kindle", id: 405399194
 mas "Moom", id: 419330170
 mas "Numbers", id: 409203825
+mas "Pixelmator Pro", id: 1289583905
 mas "Sugarmate Glance", id: 1207352056
 mas "The Unarchiver", id: 425424353
 mas "Xcode", id: 497799835
