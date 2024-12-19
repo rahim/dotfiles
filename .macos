@@ -39,7 +39,7 @@ else
 fi
 
 ###############################################################################
-# Computer name
+# Computer name, remote access
 ###############################################################################
 
 if [[ "$RUN_AS_ROOT" = true ]] && [[ -n "$HOSTNAME" ]]; then
@@ -47,6 +47,10 @@ if [[ "$RUN_AS_ROOT" = true ]] && [[ -n "$HOSTNAME" ]]; then
   sudo scutil --set HostName $HOSTNAME
   sudo scutil --set LocalHostName $HOSTNAME
   sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string $HOSTNAME
+fi
+
+if [[ "$RUN_AS_ROOT" = true ]]; then
+  sudo systemsetup -setremotelogin on
 fi
 
 ###############################################################################
