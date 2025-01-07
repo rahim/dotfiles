@@ -10,6 +10,7 @@
 .ansible
 .aptitude
 .aws
+.aws-sso
 .bash_logout
 .bundle
 .cache
@@ -17,6 +18,7 @@
 .codeintel
 .config
 .cups
+.docker
 .dotfiles.git
 .dropbox
 .DS_Store
