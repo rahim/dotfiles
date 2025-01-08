@@ -3,11 +3,12 @@ export PATH=/bin:/usr/bin:/sbin:/usr/sbin:$PATH # to be sure to be sure...
 
 export PATH="$HOME/bin:$PATH"
 
+export RBENV_ROOT=~/.rbenv
+export NODENV_ROOT=~/.nodenv
+
 # brew paths differ by arch
 if [ $(arch) = "arm64" ]; then
   export PATH=/opt/homebrew/bin:$PATH
-  export RBENV_ROOT=~/.rbenv-arm
-  export NODENV_ROOT=~/.nodenv-arm
 else
   export PATH=/usr/local/bin:$PATH
 fi
