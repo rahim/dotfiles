@@ -4,6 +4,7 @@ tap "homebrew/services"
 tap "rahim/tap"
 
 brew "awscli"
+brew "bat"
 # brew "curl"
 brew "fd"
 # brew "ffmpeg"
