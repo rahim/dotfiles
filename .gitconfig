@@ -90,3 +90,5 @@
 	gpgsign = true
 [gpg]
 	format = ssh
+[help]
+	autocorrect = prompt
