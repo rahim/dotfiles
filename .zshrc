@@ -52,10 +52,10 @@ alias sudo="nocorrect sudo"
 
 source $HOME/.less_termcap
 
+which kubectl >/dev/null && source <(kubectl completion zsh)
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 if [[ $HOST =~ ^litmus-dev ]] && [ -d ~/litmus ]; then
   cd litmus
 fi
-
