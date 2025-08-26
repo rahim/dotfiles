@@ -25,7 +25,7 @@ if [ -f /System/Library/Frameworks/JavaVM.framework/Versions/Current/Commands/ja
   export JAVA_HOME=`/System/Library/Frameworks/JavaVM.framework/Versions/Current/Commands/java_home`
 fi
 
-if [ $HOST = "Mac" ]; then
+if [ $HOST = "Mac" ] || [ $HOST = "MacBook-Pro.local" ]; then
   export HOST=viola
 fi
 
